@@ -1,22 +1,18 @@
+affichage du résultat:
+label_resultat = tk.Label(app,
+                          text="",
+                          bg="#0B3D91",
+                          fg="yellow",
+                          font=("Arial", 14))
+label_resultat.pack(pady=10)
 
+affichage est mis à jour :
+if resultat:
+    label_resultat.config(text=resultat[0])
+else:
+    label_resultat.config(text="Mot non trouvé")
 
-conn.commit()
-
-# Fonction ajouter mot
-def ajouter_mot():
-    fr = entree_fr.get().lower()
-    en = entree_en.get().lower()
-
-    if fr == "" or en == "":
-        messagebox.showwarning("Attention", "Remplir les deux champs")
-        return
-
-    try:
-        cursor.execute("INSERT INTO dictionnaire VALUES (?, ?)", (fr, en))
-        conn.commit()
-        messagebox.showinfo("Succès", "Mot ajouté !")
-        entree_fr.delete(0, tk.END)
-        entree_en.delete(0, tk.END)
-    except:
-        messagebox.showerror("Erreur", "Mot déjà existant")
-
+ L’écran =
+label_resultat = tk.Label(...)
+ Le texte affiché à l’écran =
+label_resultat.config(text=...)
